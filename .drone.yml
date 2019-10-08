@@ -6,8 +6,8 @@ name: default
 steps:
 - name: first build
   image: theembeddedkitchen/ecp5-toolchain:latest
+  recursive: true
   commands:
-  - git submodule update --init --recursive
   - export PATH=/opt/fpga_toolchain/ecp5-toolchain-linux_x86_64-v1.5.1/:$PATH
   - cd soc/
   - RISCV_TOOLCHAIN_PREFIX=riscv64-unknown-elf- make soc.bit
